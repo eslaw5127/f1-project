@@ -26,7 +26,7 @@ data2 = data2['MRData']['RaceTable']['Races'][0]['Results']
 
 race_dict = {}
 for i in range(len(data2)):
-    race_dict.update({data2[i]['Driver']['familyName'] : data2[i]['Constructor']['name']})
+    race_dict.update({data2[i]['position'] : [data2[i]['Driver']['familyName'], data2[i]['Constructor']['name'], data2[i]['status']]})
 
 
 #data for constructors
@@ -45,7 +45,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("home.html", content = race_name)
+    return render_template("home.html", content = race_dict)
 
 if __name__ == "__main__":
     app.run(debug=True)
