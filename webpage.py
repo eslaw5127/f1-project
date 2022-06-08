@@ -49,9 +49,22 @@ for i in range(len(data3)):
 
 app = Flask(__name__)
 
+@app.route("/home")
 @app.route("/")
 def home():
-    return render_template("home.html", content = race_dict)
+    return render_template("home.html")
+
+@app.route("/race")
+def race():
+    return render_template("race.html", content = race_dict, race = race_name, country = race_country)
+
+@app.route("/drivers")
+def drivers():
+    return render_template("drivers.html")
+
+@app.route("/constructors")
+def constructors():
+    return render_template("constructors.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
