@@ -21,7 +21,13 @@ url2 = "http://ergast.com/api/f1/current/last/results.json"
 response2 = requests.get(url2)
 
 data2 = response2.json()
+
+season = data2['MRData']['RaceTable']['season']
+round = data2['MRData']['RaceTable']['round']
+
 race_name = data2['MRData']['RaceTable']['Races'][0]['raceName']
+race_country = data2['MRData']['RaceTable']['Races'][0]['Circuit']['Location']['country']
+
 data2 = data2['MRData']['RaceTable']['Races'][0]['Results']
 
 race_dict = {}
