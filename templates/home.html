@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
-{% block page %}This is the home page{% endblock %}
+{% block page %}<center>Formula One Results</center>{% endblock %}
 {% block content %}
-<p>ooga booga home page</p>
+<image src="{{ url_for('static', filename='images/race.png')}}" width="450" height="400" alt=""></image>
+<image src="{{ url_for('static', filename='images/drivers.png')}}" align="right" width="450" height="400" alt=""></image>
+<br>
+<br>
+<h4><center><u>Information about this website</u></center></h4>
+<p>
+-This website is designed to show useage of API's and the Flask interface. The information in the project comes from the
+<a href="http://ergast.com/mrd/">Ergast API Website</a> Formula One API. The idea behind the project is to show Python skills in a more visual and interactive
+setting. Python is used in the back end of the project and HTML/CSS is used for webpage styling and text layout.
+This website has no affiliation to Formula One and is intended as a tool to improve coding skills and also have
+an interactive layout to see results for myself. 
+</p>
+<br>
+<p>-Documentation and source code can be found on my <a href="https://github.com/eslaw5127/f1-project">GitHub</a>.</p>
+
 {% endblock %}
