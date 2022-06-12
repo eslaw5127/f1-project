@@ -46,6 +46,7 @@ constructor_dict = {}
 for i in range(len(data3)):
     constructor_dict.update({data3[i]['Constructor']['name'] : data3[i]['points']})
 
+#data for qualifying round
 
 app = Flask(__name__)
 
@@ -57,6 +58,10 @@ def home():
 @app.route("/race")
 def race():
     return render_template("race.html", content = race_dict, race = race_name, country = race_country)
+
+@app.route("/qualifying")
+def qualifying():
+    return render_template("qualifying.html", content = race_dict, race = race_name, country = race_country)
 
 @app.route("/drivers")
 def drivers():
