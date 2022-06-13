@@ -47,6 +47,43 @@ for i in range(len(data3)):
     constructor_dict.update({data3[i]['Constructor']['name'] : data3[i]['points']})
 
 #data for qualifying round
+url4 = f'http://ergast.com/api/f1/{season}/{round}/qualifying.json'
+response4 = requests.get(url4)
+
+data4 = response4.json()
+data4 = data4['MRData']['RaceTable']['Races'][0]['QualifyingResults']
+
+qual = {}
+
+q1 = []
+q2 = []
+q3 = []
+
+
+for i in range(len(data4)):
+    q1.append(data4[i]['Q1'])
+
+for i in range(0,15):
+    q2.append(data4[i]['Q2'])
+
+for i in range(0,10):
+    q3.append(data4[i]['Q3'])
+
+for i in range(len(data4)):
+    q_list = []
+    q_list.append(data4[i]['Driver']['familyName'])
+    q_list.append(data4[i]['Constructor']['name'])
+    q_list.append(q1[i])
+    if(i < 15):
+        q_list.append(q2[i])
+    else:
+        q_list.append(0)
+    if(i < 10):
+        q_list.append(q3[i])
+    else:
+        q_list.append(0)
+    
+    qual.update({str(i+1) : q_list})
 
 app = Flask(__name__)
 
@@ -61,7 +98,7 @@ def race():
 
 @app.route("/qualifying")
 def qualifying():
-    return render_template("qualifying.html", content = race_dict, race = race_name, country = race_country)
+    return render_template("qualifying.html", content = qual)
 
 @app.route("/drivers")
 def drivers():
