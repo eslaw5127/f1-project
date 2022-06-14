@@ -9,12 +9,14 @@ url = "http://ergast.com/api/f1/current/driverStandings.json"
 response = requests.get(url)
 
 data = response.json()
+season_year = data['MRData']['StandingsTable']['season']
 data = data['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
 
 #points/wins in list
 standings_dict = {}
 for i in range(len(data)):
-    standings_dict.update({data[i]['Driver']['familyName'] : [data[i]['points'],data[i]['wins']]})
+    name = str(data[i]['Driver']['givenName'] + " " + data[i]['Driver']['familyName'])
+    standings_dict.update({str(i+1) :[ name,data[i]['Constructors'][0]['name'],data[i]['points'],data[i]['wins']]})
 
 #data for most recent race
 url2 = "http://ergast.com/api/f1/current/last/results.json"
@@ -44,7 +46,7 @@ data3 = data3['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStand
 
 constructor_dict = {}
 for i in range(len(data3)):
-    constructor_dict.update({data3[i]['Constructor']['name'] : data3[i]['points']})
+    constructor_dict.update({str(i+1) : [data3[i]['Constructor']['name'], data3[i]['points']]})
 
 #data for qualifying round
 url4 = f'http://ergast.com/api/f1/{season}/{round}/qualifying.json'
@@ -102,11 +104,11 @@ def qualifying():
 
 @app.route("/drivers")
 def drivers():
-    return render_template("drivers.html")
+    return render_template("drivers.html", content = standings_dict, year = season_year)
 
 @app.route("/constructors")
 def constructors():
-    return render_template("constructors.html")
+    return render_template("constructors.html", content = constructor_dict, year = season_year )
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,6 +1,166 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
-{% block page %}This is the drivers page{% endblock %}
+{% block page %}<center>Driver Standings for the {{year}} Season</center>{% endblock %}
 {% block content %}
-<p>ooga booga drivers</p>
+<br>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Name</th>
+        <th scope="col">Constructor</th>
+        <th scope="col">Points</th>
+        <th scope="col">Wins</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{content['1'][0]}}</td>
+        <td>{{content['1'][1]}}</td>
+        <td>{{content['1'][2]}}</td>
+        <td>{{content['1'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>{{content['2'][0]}}</td>
+        <td>{{content['2'][1]}}</td>
+        <td>{{content['2'][2]}}</td>
+        <td>{{content['2'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>{{content['3'][0]}}</td>
+        <td>{{content['3'][1]}}</td>
+        <td>{{content['3'][2]}}</td>
+        <td>{{content['3'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>{{content['4'][0]}}</td>
+        <td>{{content['4'][1]}}</td>
+        <td>{{content['4'][2]}}</td>
+        <td>{{content['4'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>{{content['5'][0]}}</td>
+        <td>{{content['5'][1]}}</td>
+        <td>{{content['5'][2]}}</td>
+        <td>{{content['5'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>{{content['6'][0]}}</td>
+        <td>{{content['6'][1]}}</td>
+        <td>{{content['6'][2]}}</td>
+        <td>{{content['6'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>{{content['7'][0]}}</td>
+        <td>{{content['7'][1]}}</td>
+        <td>{{content['7'][2]}}</td>
+        <td>{{content['7'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>{{content['8'][0]}}</td>
+        <td>{{content['8'][1]}}</td>
+        <td>{{content['8'][2]}}</td>
+        <td>{{content['8'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>{{content['9'][0]}}</td>
+        <td>{{content['9'][1]}}</td>
+        <td>{{content['9'][2]}}</td>
+        <td>{{content['9'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>{{content['10'][0]}}</td>
+        <td>{{content['10'][1]}}</td>
+        <td>{{content['10'][2]}}</td>
+        <td>{{content['10'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>{{content['11'][0]}}</td>
+        <td>{{content['11'][1]}}</td>
+        <td>{{content['11'][2]}}</td>
+        <td>{{content['11'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td>{{content['12'][0]}}</td>
+        <td>{{content['12'][1]}}</td>
+        <td>{{content['12'][2]}}</td>
+        <td>{{content['12'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td>{{content['13'][0]}}</td>
+        <td>{{content['13'][1]}}</td>
+        <td>{{content['13'][2]}}</td>
+        <td>{{content['13'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">14</th>
+        <td>{{content['14'][0]}}</td>
+        <td>{{content['14'][1]}}</td>
+        <td>{{content['14'][2]}}</td>
+        <td>{{content['14'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">15</th>
+        <td>{{content['15'][0]}}</td>
+        <td>{{content['15'][1]}}</td>
+        <td>{{content['15'][2]}}</td>
+        <td>{{content['15'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">16</th>
+        <td>{{content['16'][0]}}</td>
+        <td>{{content['16'][1]}}</td>
+        <td>{{content['16'][2]}}</td>
+        <td>{{content['16'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">17</th>
+        <td>{{content['17'][0]}}</td>
+        <td>{{content['17'][1]}}</td>
+        <td>{{content['17'][2]}}</td>
+        <td>{{content['17'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">18</th>
+        <td>{{content['18'][0]}}</td>
+        <td>{{content['18'][1]}}</td>
+        <td>{{content['18'][2]}}</td>
+        <td>{{content['18'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">19</th>
+        <td>{{content['19'][0]}}</td>
+        <td>{{content['19'][1]}}</td>
+        <td>{{content['19'][2]}}</td>
+        <td>{{content['19'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">20</th>
+        <td>{{content['20'][0]}}</td>
+        <td>{{content['20'][1]}}</td>
+        <td>{{content['20'][2]}}</td>
+        <td>{{content['20'][3]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">21</th>
+        <td>{{content['21'][0]}}</td>
+        <td>{{content['21'][1]}}</td>
+        <td>{{content['21'][2]}}</td>
+        <td>{{content['21'][3]}}</td>
+      </tr>
+    </tbody>
+  </table>
 {% endblock %}
